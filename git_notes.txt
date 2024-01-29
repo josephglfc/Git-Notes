@@ -29,10 +29,13 @@
     #make changes to files in project directory -> stage changes -> commit changes
     #with each commit git saves a complete snapshot of the entire project (not just the deltas)
 
-    #for git to start tracking changes, you first need to specify which files within the project directory git should track
+    #STAGING
+    #for git to start tracking changes, you first need to specify which files within the project directory git should track or stage
     #for specific files
     git add filename1.txt filename2.py
     #for all files with given extension
     git add *.txt
     #for all subdirectories recursively
-    git add .    
+    git add .
+    #git add moves the added files to the staging area. if any changes are made to the files after it's been staged, 
+    #the file needs to be staged again before the changes are commited.   
