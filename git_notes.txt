@@ -1,0 +1,38 @@
+1: check if git is intalled:
+    git version
+
+2: configure git
+    #global(all repos for current user) sets the level at which the config is being done. 
+    #other options include system(all users) and local(current repo)
+    git config --global user.name "First Name"
+    git config --global user.email email@email.com
+
+    #set vscode as primary editor. for the step below to work, vscode should be included in the PATH.
+    #you can check if vscode is in the PATH by testing if entering "code" in the terminal opens up vscode.
+    #if vscode is not in the PATH, then look here: https://code.visualstudio.com/docs/setup/mac
+    #"code --wait" opens vscode and asks the terminal to wait until its closed 
+    git config --global core.editor "code --wait"
+
+    #open git config file
+    git config --global e
+
+    #configure end of line. swap "input" with "true" for windows systems
+    git config --global core.autocrlf input
+
+3: Set up git for a project
+    #initialize git after navigating to project directory
+    git init
+    #this creates a .git subdirectory that is hidden and should not be touched. 
+    #removing this subdirectory directory will result in the repository being deleted.
+
+4: Basic git workflow
+    #make changes to files in project directory -> stage changes -> commit changes
+    #with each commit git saves a complete snapshot of the entire project (not just the deltas)
+
+    #for git to start tracking changes, you first need to specify which files within the project directory git should track
+    #for specific files
+    git add filename1.txt filename2.py
+    #for all files with given extension
+    git add *.txt
+    #for all subdirectories recursively
+    git add .    
