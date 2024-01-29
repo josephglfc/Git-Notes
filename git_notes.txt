@@ -26,7 +26,7 @@
     #removing this subdirectory directory will result in the repository being deleted.
 
 4: Basic git workflow
-    #make changes to files in project directory -> stage changes -> commit changes
+    #make changes to files in project directory and save changes -> stage changes -> commit changes
     #with each commit git saves a complete snapshot of the entire project (not just the deltas)
 
     #STAGING
@@ -47,4 +47,9 @@
     git commit "initial commit"
     #for long descriptions
     git commit
-    #this opens the default code editor and allows you to describe the changes being committed.  
+    #this opens the default code editor and allows you to describe the changes being committed.
+
+    #general tips for committing
+    #1.work on single topic or area for a commit
+    #2.commit often, but not too often
+    #3.included meaningful commit messages  
