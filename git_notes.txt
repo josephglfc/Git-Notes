@@ -38,4 +38,13 @@
     #for all subdirectories recursively
     git add .
     #git add moves the added files to the staging area. if any changes are made to the files after it's been staged, 
-    #the file needs to be staged again before the changes are commited.   
+    #the file needs to be staged again before the changes are commited.
+
+    #COMMITTING
+    #once changes have been staged, they need to be committed in order for git to take a snapshot.
+    #when committing, it's best practice to include a description about the changes that are being committed
+    #for short descriptions
+    git commit "initial commit"
+    #for long descriptions
+    git commit
+    #this opens the default code editor and allows you to describe the changes being committed.  
