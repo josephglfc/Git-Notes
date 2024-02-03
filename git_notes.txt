@@ -52,4 +52,11 @@
     #general tips for committing
     #1.work on single topic or area for a commit
     #2.commit often, but not too often
-    #3.included meaningful commit messages  
+    #3.included meaningful commit messages
+
+    #REMOVING FILES
+    #to remove a tracked file
+    rm filename1.txt
+    #once a file is removed, you still need to stage and commit
+    #you can also remove files using git rm. this would remove the file from the working directory and also the staging area
+    git rm filename.txt
