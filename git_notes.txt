@@ -26,7 +26,8 @@
     #removing this subdirectory directory will result in the repository being deleted.
 
 4: Basic git workflow
-    #make changes to files in project directory and save changes -> stage changes -> commit changes
+    #OVERVIEW
+    #make changes to files in project directory and: save changes -> stage changes -> commit changes
     #with each commit git saves a complete snapshot of the entire project (not just the deltas)
 
     #STAGING
@@ -59,4 +60,5 @@
     rm filename1.txt
     #once a file is removed, you still need to stage and commit
     #you can also remove files using git rm. this would remove the file from the working directory and also the staging area
+    #you will still need to commit after
     git rm filename.txt
