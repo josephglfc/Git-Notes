@@ -76,3 +76,5 @@
     git log --oneline
     #1 - checkout commit - do this to view the code as of a previous commit
     git checkout commit_id
+    #to return to master
+    git checkout master
