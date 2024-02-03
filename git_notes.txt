@@ -66,4 +66,3 @@
     #you might also come across instances when you want to remove a file or directory only from being tracked, but not want to entirely
     #delete the file or directory. in such instances, you can use a modified version of git rm
     git rm --cached filename.txt
-    
