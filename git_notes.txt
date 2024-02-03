@@ -72,9 +72,14 @@
     #1 - checkout commit
     #2 - revert commit
     #3 - reset commit
+
     # to undo things you first need to review the git log
     git log --oneline
+
     #1 - checkout commit - do this to view the code as of a previous commit
     git checkout commit_id
     #to return to master
     git checkout master
+
+    #2 - revert commit - to undo a specific commit. aaassad
+    git revert commti_id
