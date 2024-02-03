@@ -66,3 +66,11 @@
     #you might also come across instances when you want to remove a file or directory only from being tracked, but not want to entirely
     #delete the file or directory. in such instances, you can use a modified version of git rm
     git rm --cached filename.txt
+
+    #UNDOING THINGS
+    #there are three ways to undo things in git
+    #1 - checkout commit
+    #2 - revert commit
+    #3 - reset commit
+    # to undo things you first need to review the git log
+    git log --oneline
