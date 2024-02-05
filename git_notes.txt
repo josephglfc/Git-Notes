@@ -113,4 +113,8 @@
     git branch -a 
     #to switch to a specific branch
     git checkout branch_name
+    #to delete a branch that has been merged to master
+    git branch -d branch_name
+    #to delete a branch that hasnt been merged yet
+    git branch -D branch_name
     
