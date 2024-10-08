@@ -63,7 +63,7 @@
     #general tips for committing
     #1.work on single topic or area for a commit
     #2.commit often, but not too often
-    #3.included meaningful commit messages
+    #3.include meaningful commit messages
 
     ####################
 
