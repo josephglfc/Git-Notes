@@ -1,3 +1,5 @@
+https://git-scm.com/docs
+
 1: check if git is intalled:
     >>>git --version
 
@@ -6,8 +8,8 @@
 2: configure git
     #global(all repos for current user) sets the level at which the config is being done. 
     #other options include system(all users) and local(current repo)
-    >>>git config --global user.name "First Name"
-    >>>git config --global user.email email@email.com
+    >>>git config --global user.name "Joseph George"
+    >>>git config --global user.email josephglfc@gmail.com
 
     #set vscode as primary editor. for the step below to work, vscode should be included in the PATH.
     #you can check if vscode is in the PATH by testing if entering "code" in the terminal opens up vscode.
@@ -58,7 +60,7 @@
     #once changes have been staged, they need to be committed in order for git to take a snapshot.
     #when committing, it's best practice to include a description about the changes that are being committed
     #for short descriptions
-    >>>git commit "initial commit"
+    >>>git commit -m "initial commit"
     #for long descriptions
     >>>git commit
     #this opens the default code editor and allows you to describe the changes being committed.
@@ -67,6 +69,14 @@
     #1.work on single topic or area for a commit
     #2.commit often, but not too often
     #3.include meaningful commit messages
+
+    ####################
+
+    #GIT IGNORE
+    #oftentimes we dont want git to keep track of certain files or folders. this can be done by creating a .gitignore file and specifying
+    #the files that we dont want git to track
+    >>>touch .gitignore
+    #then add the relevant file or folder names to the .gitignore file
 
     ####################
 
