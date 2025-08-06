@@ -29,6 +29,9 @@
     #this creates a .git subdirectory that is hidden and should not be touched. 
     #removing this subdirectory directory will result in the repository being deleted.
 
+    #to see current status for git tracking within a project direcotry
+    >>>git status
+
 ####################
 
 4: Basic git workflow
