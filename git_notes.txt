@@ -156,4 +156,6 @@ https://git-scm.com/docs
     #If Git encounters conflicting changes in the same file lines or different files, it will pause the merge and prompt you to resolve 
     #the conflicts manually. You will need to edit the conflicted files, choose which changes to keep, and then mark them as resolved 
     #using git add <conflicted-file>. Finally, complete the merge with git commit.
-    
+    >>>git checkout master
+    >>>git merge branching_info -m "merged branch branching_info"
+    >>>git branch -d branching_info
