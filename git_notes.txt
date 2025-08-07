@@ -131,4 +131,14 @@ https://git-scm.com/docs
     >>>git branch -d branch_name
     #to delete a branch that hasnt been merged yet
     >>>git branch -D branch_name
+
+    ####################
+
+    #MERGING
+    #once you are done with workign on your branch, you typically want to consolidate it with your master.
+    #to do, we need to first switch to the master, and then merge the branch to the master.
+    #there are two types of merges: 1. fast forward merge and 2. three way merge
+    #fast forward merge
+    >>>git checkout master
+    >>>git merge
     
