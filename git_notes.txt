@@ -1,71 +1,99 @@
+https://git-scm.com/docs
+
 1: check if git is intalled:
-    git version
+    >>>git --version
+
+####################
 
 2: configure git
     #global(all repos for current user) sets the level at which the config is being done. 
     #other options include system(all users) and local(current repo)
-    git config --global user.name "First Name"
-    git config --global user.email email@email.com
+    >>>git config --global user.name "Joseph George"
+    >>>git config --global user.email josephglfc@gmail.com
 
     #set vscode as primary editor. for the step below to work, vscode should be included in the PATH.
     #you can check if vscode is in the PATH by testing if entering "code" in the terminal opens up vscode.
     #if vscode is not in the PATH, then look here: https://code.visualstudio.com/docs/setup/mac
     #"code --wait" opens vscode and asks the terminal to wait until its closed 
-    git config --global core.editor "code --wait"
+    >>>git config --global core.editor "code --wait"
 
     #open git config file
-    git config --global e
+    >>>git config --global e
 
     #configure end of line. swap "input" with "true" for windows systems
-    git config --global core.autocrlf input
+    >>>git config --global core.autocrlf input
+
+####################
 
 3: Set up git for a project
     #initialize git after navigating to project directory
-    git init
+    >>>git init
     #this creates a .git subdirectory that is hidden and should not be touched. 
     #removing this subdirectory directory will result in the repository being deleted.
+
+    #to see current status for git tracking within a project direcotry
+    >>>git status
+
+####################
 
 4: Basic git workflow
     #OVERVIEW
     #make changes to files in project directory and: save changes -> stage changes -> commit changes
     #with each commit git saves a complete snapshot of the entire project (not just the deltas)
 
+    ####################
+
     #STAGING
     #for git to start tracking changes, you first need to specify which files within the project directory git should track or stage
     #for specific files
-    git add filename1.txt filename2.py
+    >>>git add filename1.txt filename2.py
     #for all files with given extension
-    git add *.txt
+    >>>git add *.txt
     #for all subdirectories within folder
-    git add .
+    >>>git add .
     #git add moves the added files to the staging area. if any changes are made to the files after it's been staged, 
     #the file needs to be staged again before the changes are commited.
+
+    ####################
 
     #COMMITTING
     #once changes have been staged, they need to be committed in order for git to take a snapshot.
     #when committing, it's best practice to include a description about the changes that are being committed
     #for short descriptions
-    git commit "initial commit"
+    >>>git commit -m "initial commit"
     #for long descriptions
-    git commit
+    >>>git commit
     #this opens the default code editor and allows you to describe the changes being committed.
-
+    
     #general tips for committing
     #1.work on single topic or area for a commit
     #2.commit often, but not too often
-    #3.included meaningful commit messages
+    #3.include meaningful commit messages
+
+    ####################
+
+    #GIT IGNORE
+    #oftentimes we dont want git to keep track of certain files or folders. this can be done by creating a .gitignore file and specifying
+    #the files that we dont want git to track
+    >>>touch .gitignore
+    #then add the relevant file or folder names to the .gitignore file
+    #you can also use an online gitignore generator to generate the .gitignore file depending on the type of project you are working on.
+
+    ####################
 
     #REMOVING FILES
     #to remove a tracked file completely  
-    rm filename1.txt
+    >>>rm filename1.txt
     #once a file is removed, you still need to stage and commit
     #you can also remove files using git rm. this would remove the file from the working directory and also the staging area
     #you will still need to commit after
-    git rm filename.txt
+    >>>git rm filename.txt
 
     #you might also come across instances when you want to remove a file or directory only from being tracked, but not want to entirely
     #delete the file or directory. in such instances, you can use a modified version of git rm
-    git rm --cached filename.txt
+    >>>git rm --cached filename.txt
+
+    ####################
 
     #UNDOING THINGS
     #there are three ways to undo things in git
@@ -74,16 +102,58 @@
     #3 - reset commit
 
     # to undo things you first need to review the git log
-    git log --oneline
+    >>>git log --oneline
 
     #1 - checkout commit - to view the code as of a previous commit
-    git checkout commit_id
+    >>>git checkout commit_id
     #to return to master
-    git checkout master
+    >>>git checkout master
 
     #2 - revert commit - to undo a specific commit
-    git revert commit_id
+    >>>git revert commit_id
 
     #3 - reset commit - to delete all commits since a specific commit
     #note that you need to be very careful and certain when doing this. it deletes commits from your repo
-    git reset commit_id
+    >>>git reset commit_id
+
+    ####################
+
+    #BRANCHING
+    #git workflows typically use a master and one or more branches. branches ensure that updates are not made directly to 
+    #the master version of the codebase, and are instead tested out before being merged to the master.
+    #to create a branch
+    >>>git branch branch_name
+    #to view all branches
+    >>>git branch -a 
+    #to switch to a specific branch
+    >>>git checkout branch_name
+    #to delete a branch that has been merged to master
+    >>>git branch -d branch_name
+    #to delete a branch that hasnt been merged yet
+    >>>git branch -D branch_name
+
+    ####################
+
+    #MERGING
+    #once you are done with workign on your branch, you typically want to consolidate it with your master.
+    #to do, we need to first switch to the master, and then merge the branch to the master.
+    #there are two types of merges: 1. fast forward merge and 2. three way merge
+
+    #FAST FORWARD MERGE
+    #when you try to merge one commit(b2) with a commit(master) that can be reached by following the first commit’s(b2) history, 
+    #Git simplifies things by moving the pointer forward because there is no divergent work to merge together — this is called a 
+    “fast-forward.”i.e. when there are no additional commits to the main branch(master) since the side branch(b2) was created. 
+    >>>git checkout master
+    >>>git merge b2 -m "merged branch b2"
+    >>>git branch -d b2
+
+    #THREE WAY MERGE
+    #when both the main(master) and side(branching_info) branches have unique commits. Git combines the changes from both branches and 
+    #creates a new "merge commit" to record the integration. This preserves the history of both branches.
+    #Instead of just moving the branch pointer forward, Git creates a new snapshot that results from this three-way merge and 
+    #automatically creates a new commit that points to it. This is referred to as a merge commit, and is special in that it has more 
+    #than one parent. 
+    #If Git encounters conflicting changes in the same file lines or different files, it will pause the merge and prompt you to resolve 
+    #the conflicts manually. You will need to edit the conflicted files, choose which changes to keep, and then mark them as resolved 
+    #using git add <conflicted-file>. Finally, complete the merge with git commit.
+    
