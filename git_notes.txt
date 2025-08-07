@@ -127,6 +127,8 @@ https://git-scm.com/docs
     >>>git branch -a 
     #to switch to a specific branch
     >>>git checkout branch_name
+    #or
+    >>>git switch branch_name
     #to delete a branch that has been merged to master
     >>>git branch -d branch_name
     #to delete a branch that hasnt been merged yet
@@ -171,3 +173,20 @@ https://git-scm.com/docs
     >>>git diff 3d47675 7ea5b68
     #between files
     >>>git diff file1 file2
+
+    ####################
+
+    #STASHING
+    #typically, you cannot switch from one branch to another without commiting your changes first. however, in some instances, you will
+    #need to switch branches before you commit your changes. stashing allows you to do that
+    >>>git stash
+    #once youve swithced to a different branch, completed your work on that branch, and return to your original branch, you will notice
+    #that the uncommited changes that you made previously are not visible. but since you stashed those changes, you can retreive them
+    >>>git stash pop
+    #stashing need not be constrained to the original branch on which you stashed your code. you can apply the stashed changes to a
+    #different branch too. however, be careful when doing so since stashing can get complicated if there are multiple people working on a 
+    #a project, and also there might be multiple stashes.
+    #use git stash list to list all stashed across all branches
+    >>>git stash list
+    #use git stash apply to apply stash to current branch
+    >>>git stash apply stash@{0}
