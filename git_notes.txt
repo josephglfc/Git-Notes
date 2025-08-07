@@ -159,3 +159,15 @@ https://git-scm.com/docs
     >>>git checkout master
     >>>git merge branching_info -m "merged branch branching_info"
     >>>git branch -d branching_info
+
+    ####################
+
+    #COMPARING DIFFERENCES
+    #between working direcotry and previous commit
+    >>>git diff HEAD
+    #between staged files and previous commit on branch
+    >>>git diff --staged
+    #between commits
+    >>>git diff 3d47675 7ea5b68
+    #between files
+    >>>git diff file1 file2
