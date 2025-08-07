@@ -138,7 +138,12 @@ https://git-scm.com/docs
     #once you are done with workign on your branch, you typically want to consolidate it with your master.
     #to do, we need to first switch to the master, and then merge the branch to the master.
     #there are two types of merges: 1. fast forward merge and 2. three way merge
-    #fast forward merge
+
+    #FAST FORWARD MERGE
+    #when you try to merge one commit(b2) with a commit(master) that can be reached by following the first commit’s(b2) history, 
+    #Git simplifies things by moving the pointer forward because there is no divergent work to merge together — this is called a 
+    “fast-forward.”i.e. when there are no additional commits to the main branch(master) since the side branch(b2) was created. 
     >>>git checkout master
-    >>>git merge
+    >>>git merge b2 -m "merged branch b2"
+    >>>git branch -d b2
     
