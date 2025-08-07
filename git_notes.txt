@@ -190,3 +190,14 @@ https://git-scm.com/docs
     >>>git stash list
     #use git stash apply to apply stash to current branch
     >>>git stash apply stash@{0}
+
+    ####################
+
+    #MOVING BACK TO PREVIOUS COMMITS AND RETURNING
+    #to move back to a previous commit in our project history, we can use the git log --online command to identify the commit of interest
+    #and then use the git checkout command
+    >>>git checkout 499a092
+    #to return to the most recent commit
+    >>>git checkout master
+    #to return to the commit that we were originally at before we move to a previous commit
+    >>>git reflog
