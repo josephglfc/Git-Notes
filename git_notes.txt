@@ -199,5 +199,6 @@ https://git-scm.com/docs
     >>>git checkout 499a092
     #to return to the most recent commit
     >>>git checkout master
-    #to return to the commit that we were originally at before we move to a previous commit
+    #to return to the commit that we were originally at before we move to a previous commit, we can use the relog command to obtain the
+    #commit id of the commit that we were at previously
     >>>git reflog
